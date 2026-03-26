@@ -1,5 +1,6 @@
 package com.example.data.di
 
+import com.example.data.network.api.CoursesApi
 import com.example.data.network.interceptor.MockInterceptor
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -31,5 +32,6 @@ val networkModule = module {
             )
             .build()
     }
-}
 
+    single { get<Retrofit>().create(CoursesApi::class.java) }
+}
