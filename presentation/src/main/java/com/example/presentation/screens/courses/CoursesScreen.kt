@@ -15,11 +15,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.presentation.uitils.UiState
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun CoursesScreen(viewModel: CoursesViewModel = koinViewModel()) {
+fun CoursesScreen(viewModel: CoursesViewModel = koinViewModel(), navController: NavController) {
     val state by viewModel.courses.collectAsState()
 
     Box(
