@@ -34,8 +34,7 @@ fun BaseTextField(
     OutlinedTextField(
         value = value,
         onValueChange = onValueChange,
-        modifier = modifier
-            .fillMaxWidth(),
+        modifier = modifier,
         placeholder = {
             Text(text = hint, fontSize = 14.sp)
         },

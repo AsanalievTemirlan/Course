@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
@@ -60,7 +61,8 @@ fun AuthScreen(navController: NavController, viewModel: AuthViewModel = koinView
                     char in 'А'..'я' || char == 'ё' || char == 'Ё'
                 }
             },
-            hint = "Введите email"
+            hint = "Введите email",
+            modifier = Modifier.fillMaxWidth(),
         )
         Spa(16)
         BaseText(
@@ -68,6 +70,7 @@ fun AuthScreen(navController: NavController, viewModel: AuthViewModel = koinView
         )
         Spa(8)
         BaseTextField(
+            modifier = Modifier.fillMaxWidth(),
             value = password.value,
             onValueChange = {
                 password.value = it
